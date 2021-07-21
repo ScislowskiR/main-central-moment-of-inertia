@@ -277,6 +277,7 @@ class Plotting:
 
 class WidgetsInScrolledFrame:
     siema = 0
+
     def __init__(self, master):
         self.master = master
         self.count = 0
@@ -344,18 +345,23 @@ class WidgetsInScrolledFrame:
             self.frame_list[-1][i].grid( column=i, row=self.count, sticky=tk.W )
         self.count += 1
         tk.Button( self.frame_output, text='print',
-                   command=lambda: print( self.calc_list ) ).grid( column=0, row=0 )
+                   command=lambda: print( self.calc_list )
+                   ).grid( column=0, row=0 )
         tk.Button( self.frame_output, text='count area',
-                   command=lambda:(print( self.exec(option='area'), "area" )) ).grid( column=1, row=0 )
+                   command=lambda: (print( self.exec(option='area'), "area" ))
+                   ).grid( column=1, row=0 )
         tk.Button( self.frame_output, text='static moment',
                    command=lambda:
-                   (print( self.exec(option='ax stat'), self.exec(option='ay stat'), "static moments" )) ).grid( column=2, row=0 )
+                   (print( self.exec(option='ax stat'), self.exec(option='ay stat'), "static moments" ))
+                   ).grid( column=2, row=0 )
         tk.Button( self.frame_output, text='center of mass',
                    command=lambda:
-                   (print( self.exec(option='ax mass'), self.exec(option='ay mass'), "center of mass" )) ).grid( column=3, row=0 )
+                   (print( self.exec(option='ax mass'), self.exec(option='ay mass'), "center of mass" ))
+                   ).grid( column=3, row=0 )
         tk.Button( self.frame_output, text='main central moment of inertia',
                    command=lambda:
-                   (print(self.exec(option='ax cmi'), self.exec(option='ay cmi'), "moment of inertia")) ).grid( column=4, row=0 )
+                   (print(self.exec(option='ax cmi'), self.exec(option='ay cmi'), "moment of inertia"))
+                   ).grid( column=4, row=0 )
 
     def exec(self, option):
         return Calculate().__int__( command=option, listtt=self.calc_list, alisttt=self.alist,
@@ -425,7 +431,8 @@ class WidgetsInScrolledFrame:
                                                       canvas=self.canvas2,
                                                       info=1 ).plotting( if_clear=0 ),
                                             Calculate( shape='◯', radius=entry1, ax=entry4, ay=entry5,
-                                                       value=change_value.__int__() ).applist( self.calc_list )) )] )
+                                                       value=change_value.__int__()
+                                                       ).applist( self.calc_list )) )] )
         if shape == '◖':
             self.frame_list.append( [
                 tk.Label( self.frame, text='◖' ),
@@ -453,7 +460,8 @@ class WidgetsInScrolledFrame:
                                                       canvas=self.canvas2,
                                                       info=1 ).plotting( if_clear=0 ),
                                             Calculate( shape='◖', radius=entry1, ax=entry4, ay=entry5,
-                                                       value=change_value.__int__() ).applist( self.calc_list )) )] )
+                                                       value=change_value.__int__()
+                                                       ).applist( self.calc_list )) )] )
         if shape == '◗':
             self.frame_list.append( [
                 tk.Label( self.frame, text='◗' ),
@@ -481,7 +489,8 @@ class WidgetsInScrolledFrame:
                                                       canvas=self.canvas2,
                                                       info=1 ).plotting( if_clear=0 ),
                                             Calculate( shape='◗', radius=entry1, ax=entry4, ay=entry5,
-                                                       value=change_value.__int__() ).applist( self.calc_list )) )] )
+                                                       value=change_value.__int__()
+                                                       ).applist( self.calc_list )) )] )
         if shape == '◓':
             self.frame_list.append( [
                 tk.Label( self.frame, text='◓' ),
@@ -509,7 +518,8 @@ class WidgetsInScrolledFrame:
                                                       canvas=self.canvas2,
                                                       info=1 ).plotting( if_clear=0 ),
                                             Calculate( shape='◓', radius=entry1, ax=entry4, ay=entry5,
-                                                       value=change_value.__int__() ).applist( self.calc_list )) )] )
+                                                       value=change_value.__int__()
+                                                       ).applist( self.calc_list )) )] )
         if shape == '◒':
             self.frame_list.append( [
                 tk.Label( self.frame, text='◒' ),
@@ -537,7 +547,8 @@ class WidgetsInScrolledFrame:
                                                       canvas=self.canvas2,
                                                       info=1 ).plotting( if_clear=0 ),
                                             Calculate( shape='◒', radius=entry1, ax=entry4, ay=entry5,
-                                                       value=change_value.__int__() ).applist( self.calc_list )) )] )
+                                                       value=change_value.__int__()
+                                                       ).applist( self.calc_list )) )] )
         if shape == '◔':
             self.frame_list.append( [
                 tk.Label( self.frame, text='◔' ),
@@ -567,7 +578,8 @@ class WidgetsInScrolledFrame:
                                                       info=1 ).plotting( if_clear=0 ),
                                             Calculate( shape='◔', radius=entry1, ax=entry4, ay=entry5,
                                                        c_quarter=quarter.__int__(),
-                                                       value=change_value.__int__() ).applist( self.calc_list )) )] )
+                                                       value=change_value.__int__()
+                                                       ).applist( self.calc_list )) )] )
         if shape == '◼':
             self.frame_list.append( [
                 tk.Label( self.frame, text='◼' ),
@@ -596,7 +608,8 @@ class WidgetsInScrolledFrame:
                                                       canvas=self.canvas2,
                                                       info=1 ).plotting( if_clear=0 ),
                                             Calculate( shape='◼', width=entry2, height=entry3, ax=entry4, ay=entry5,
-                                                       value=change_value.__int__() ).applist( self.calc_list )) )] )
+                                                       value=change_value.__int__()
+                                                       ).applist( self.calc_list )) )] )
         if shape == '◣':
             self.frame_list.append( [
                 tk.Label( self.frame, text='◣' ),
@@ -625,7 +638,8 @@ class WidgetsInScrolledFrame:
                                                       canvas=self.canvas2,
                                                       info=1 ).plotting( if_clear=0 ),
                                             Calculate( shape='◣', width=entry2, height=entry3, ax=entry4, ay=entry5,
-                                                       value=change_value.__int__() ).applist( self.calc_list )) )] )
+                                                       value=change_value.__int__()
+                                                       ).applist( self.calc_list )) )] )
         if shape == '│':
             self.frame_list.append( [
                 tk.Label( self.frame, text='│' ),
@@ -642,7 +656,8 @@ class WidgetsInScrolledFrame:
                                                       value=change_value.__int__(),
                                                       plott=self.plot1,
                                                       canvas=self.canvas1,
-                                                      level=change_level.__int__() ).plotting( if_clear=1 )) ),
+                                                      level=change_level.__int__()
+                                                      ).plotting( if_clear=1 )) ),
                 tk.Button( self.frame, text='plot on main',
                            command=lambda: (Plotting( master=self.frame_plot, shape='│',
                                                       radius=None, width=entry2, height=None,
@@ -655,7 +670,9 @@ class WidgetsInScrolledFrame:
                                                       info=1,
                                                       level=change_level.__int__()).plotting( if_clear=0 ),
                                             Calculate( shape='│', width=entry2, ax=entry4, ay=entry5,
-                                                       value=change_value.__int__(), level=change_level.__int__() ).applist( self.calc_list )) )] )
+                                                       value=change_value.__int__(),
+                                                       level=change_level.__int__()
+                                                       ).applist( self.calc_list )) )] )
         for i in range( 0, len( self.frame_list[-1] ) ):
             self.frame_list[-1][i].grid( column=i, row=self.count, sticky=tk.W )
         self.frame.columnconfigure( self.count, weight=1 )
