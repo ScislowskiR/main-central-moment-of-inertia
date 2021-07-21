@@ -329,7 +329,7 @@ class WidgetsInScrolledFrame:
             tk.Button( self.frame_opt, text='◔', command=lambda: self.new_figure( shape='◔' ) ),
             tk.Button( self.frame_opt, text='◼', command=lambda: self.new_figure( shape='◼' ) ),
             tk.Button( self.frame_opt, text='◣', command=lambda: self.new_figure( shape='◣' ) ),
-            tk.Button( self.frame_opt, text='│', command=lambda: self.new_figure( shape='│' ) ),
+            tk.Button( self.frame_opt, text='│ \\\\does nothing', command=lambda: self.new_figure( shape='│' ) ),
             tk.Button( self.frame_opt, text='X',
                        command=lambda: (self.clear_all(), Plotting( master=self.frame_plot, shape='X',
                                                                     radius=None, width=None, height=None,
@@ -350,7 +350,7 @@ class WidgetsInScrolledFrame:
         tk.Button( self.frame_output, text='count area',
                    command=lambda: (print( self.exec(option='area'), "area" ))
                    ).grid( column=1, row=0 )
-        tk.Button( self.frame_output, text='static moment',
+        tk.Button( self.frame_output, text='static moments',
                    command=lambda:
                    (print( self.exec(option='ax stat'), self.exec(option='ay stat'), "static moments" ))
                    ).grid( column=2, row=0 )
@@ -358,9 +358,9 @@ class WidgetsInScrolledFrame:
                    command=lambda:
                    (print( self.exec(option='ax mass'), self.exec(option='ay mass'), "center of mass" ))
                    ).grid( column=3, row=0 )
-        tk.Button( self.frame_output, text='main central moment of inertia',
+        tk.Button( self.frame_output, text='moments of inertia',
                    command=lambda:
-                   (print(self.exec(option='ax cmi'), self.exec(option='ay cmi'), "moment of inertia"))
+                   (print(self.exec(option='ax cmi'), self.exec(option='ay cmi'), "moments of inertia"))
                    ).grid( column=4, row=0 )
 
     def exec(self, option):
@@ -371,7 +371,7 @@ class WidgetsInScrolledFrame:
     def popup_window(self):
         window = tk.Toplevel()
 
-        label = tk.Label( window, text="Hello World!" )
+        label = tk.Label( window, text="Coming soon" )
         label.pack( fill='x', padx=50, pady=5 )
 
         button_close = tk.Button( window, text="Close", command=window.destroy )
